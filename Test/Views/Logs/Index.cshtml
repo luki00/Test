@@ -1,0 +1,42 @@
+﻿@model Domain.ViewModels.LogsViewModel
+
+@{
+    ViewBag.Title = "Logi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Logi</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.List.FirstOrDefault().NewName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.List.FirstOrDefault().OldName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.List.FirstOrDefault().Time)
+        </th>
+    </tr>
+
+    @foreach (var item in Model.List)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+
+

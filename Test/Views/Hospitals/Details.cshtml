@@ -1,0 +1,67 @@
+﻿@model Domain.ViewModels.HospitalsViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    @Html.ActionLink("Wróć", "Index")
+    <dl class="dl-horizontal">
+
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details.Describtion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details.Describtion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details.Sor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details.Sor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+        @Html.ActionLink("Edytuj", "Edit", new { id = Model.Details.Id }, htmlAttributes: new { @class = "btn btn-default" })
+
+    }
+
+
+</p>
